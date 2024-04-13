@@ -17,18 +17,23 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: build and push the docker image
+        run: |
+         gcloud auth configure-docker us-east1-docker.pkg.dev --quiet
+         docker build -t us-east1-docker.pkg.dev/$GOOGLE_PROJECT/my-reg/my-reg:$GITHUB_RUN_NUMBER .
         
-      - uses: act10ns/slack@v2
-        with:
-          status: ${{ job.status }}
-          steps: ${{ toJson(steps) }}
-          channel: '#pipeline'
-        if: always()
+      # - uses: act10ns/slack@v2
+      #   with:
+      #     status: ${{ job.status }}
+      #     steps: ${{ toJson(steps) }}
+      #     channel: '#pipeline'
+      #   if: always()
         
       - name: Slack Notification
         uses: act10ns/slack@v1
         with: 
           status: starting
           channel: '#pipeline'
-          message: Deployed to testing Successfully...
+          message: There is a Failure while Deploying ... to ...
         if: failure()
