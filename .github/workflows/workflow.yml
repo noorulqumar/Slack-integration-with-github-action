@@ -31,4 +31,4 @@ jobs:
           status: starting
           channel: '#pipeline'
           message: Deployed to testing Successfully...
-        if: always()
+        if: failure()
