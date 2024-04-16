@@ -2,7 +2,8 @@
 # Steps
 ## Step 1 => Create a Workspace
 ## Step 2 => Create a Channel
-## Step 3 => Visit This https://api.slack.com/apps  And Create an App, The Name you will choice here, will showin the slack channel
+## Step 3 => Visit This https://api.slack.com/apps  And Create an App, 
+The Name you will choice here, will show in the slack channel
 ## Step 4 => Click on Create New App
 ## Step 5 => Select From Scratch
 ## Step 7 => Give Name to app and select the your workspace.
